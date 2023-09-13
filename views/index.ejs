@@ -1,0 +1,83 @@
+<%- include ("includes/header") %>
+
+<div id="homeApp" style="margin-bottom: 80px;">
+    <div class="container" id="features">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>File Transfer Web App</h1>
+                <!-- <p>Node JS and Mongo DB</p> -->
+
+                <a v-bind:href="mainURL + '/MyUploads'">Get Started</a>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container"> -->
+        <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="/public/img/cloud1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Store and access anywhere</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="/public/img/link1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Generate links and share with others</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="/public/img/lock.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Safe and Secure</p>
+                    </div>
+                  </div>
+              </div>
+          <!-- </div>
+          <div class="row"> -->
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                  <img src="/public/img/dolor.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Free of cost</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                  <img src="/public/img/download.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Download from anywhere</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                  <img src="/public/img/blockchain.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Blockchain integration soon.....</p>
+                  </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+<!-- </div> -->
+
+<script>
+    const homeApp = Vue.createApp({
+        data() {
+            return {
+                mainURL: baseUrl,
+            }
+        }
+    });
+    homeApp.mount("#homeApp");
+</script>
+
+<%- include ("includes/footer") %>
