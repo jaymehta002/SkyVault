@@ -19,13 +19,13 @@ app.use(session({
     saveUninitialized: false
 }));
 
+app.use(express.static("public"));
 
-
-app.use("/public/css", express.static(__dirname + "/public/css"));
-app.use("/public/js", express.static(__dirname + "/public/js"));
-app.use("/public/img", express.static(__dirname + "/public/img"));
-app.use("/public/font-awesome-4.7.0", express.static(__dirname + "/public/font-awesome-4.7.0"));
-app.use("/public/fonts", express.static(__dirname + "/public/fonts"));
+// app.use("/public/css", express.static(__dirname + "/public/css"));
+// app.use("/public/js", express.static(__dirname + "/public/js"));
+// app.use("/public/img", express.static(__dirname + "/public/img"));
+// app.use("/public/font-awesome-4.7.0", express.static(__dirname + "/public/font-awesome-4.7.0"));
+// app.use("/public/fonts", express.static(__dirname + "/public/fonts"));
 
 
 app.set("view engine", "ejs");
@@ -492,11 +492,11 @@ http.listen(process.env.PORT, function () {
                         "createdAt": new Date().getTime()
                     };
 
-                    var filePath = "public/uploads/" + user.email + "/" + new Date().getTime() + "-" + request.files.file.name;
+                    var filePath = "./uploads" + user.email + "/" + new Date().getTime() + "-" + request.files.file.name;
                     uploadedObj.filePath = filePath;
 
-                    if (!fileSystem.existsSync("public/uploads/" + user.email)){
-                        fileSystem.mkdirSync("public/uploads/" + user.email);
+                    if (!fileSystem.existsSync("./uploads/" + user.email)){
+                        fileSystem.mkdirSync("./uploads/" + user.email);
                     }
 
                     // Read the file

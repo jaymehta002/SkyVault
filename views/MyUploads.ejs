@@ -53,7 +53,7 @@
 
 </div>
 
-<form method="POST" action="<%= request.mainURL %>/UploadFile" enctype="multipart/form-data" id="form-upload-file">
+<form method="POST" action="/UploadFile" enctype="multipart/form-data" id="form-upload-file">
     <input type="hidden" name="_id" value="" />
     <input type="file" name="file" id="input-file-upload" style="display: none;" onchange="confirmUpload();" required />
 </form>
@@ -74,7 +74,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-                <form method="POST" action="<%= request.mainURL %>/ShareViaLink" id="form-share-via-link" style="display: contents;">
+                <form method="POST" action="/ShareViaLink" id="form-share-via-link" style="display: contents;">
                     <input type="hidden" name="_id" required />
                 </form>
 
@@ -90,7 +90,7 @@
                     }
                 </script>
 
-                <form method="POST" action="<%= request.mainURL %>/DeleteFile"
+                <form method="POST" action="/DeleteFile"
                     id="form-delete-file">
                     <input type="hidden" name="_id" required />
 
