@@ -38,11 +38,10 @@ var database = null;
 
 // app middleware to attach main URL and user object with each request
 app.use(function (request, result, next) {
-    request.mainURL = mainURL;
+    // Dynamically determine the base URL from the incoming request
+    request.mainURL = request.protocol + '://' + request.get('host');
     request.isLogin = (typeof request.session.user !== "undefined");
     request.user = request.session.user;
-
-    // continue the request
     next();
 });
 
